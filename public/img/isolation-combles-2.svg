@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="isolation-combles-2" transform="translate(-870 -7274)">
+    <rect id="Rectangle_7022" data-name="Rectangle 7022" width="48" height="48" transform="translate(870 7274)" fill="none"/>
+    <g id="Groupe_15327" data-name="Groupe 15327" transform="translate(-1.006 -2)">
+      <g id="Groupe_4506" data-name="Groupe 4506" transform="translate(877.006 7287)">
+        <g id="Maison">
+          <rect id="Rectangle_1511" data-name="Rectangle 1511" width="9.307" height="13.423" transform="translate(26.432 11.96)" fill="#dce1f5"/>
+          <path id="Tracé_17746" data-name="Tracé 17746" d="M24.72,24.628H0V10.3L12.225,0l12.5,10.3Z" transform="translate(1.712 0.754)" fill="#edeff4"/>
+          <path id="Tracé_17748" data-name="Tracé 17748" d="M20.242,8.214,11.26.651A2.752,2.752,0,0,0,9.485,0H0L9.547,8.041a6.856,6.856,0,0,0,1.315.872h9.123a.4.4,0,0,0,.375-.264.393.393,0,0,0-.117-.436Z" transform="translate(16.536 3.82)" fill="#1d1d89"/>
+          <path id="Tracé_17749" data-name="Tracé 17749" d="M.754,12.734A.756.756,0,0,1,.268,11.4L13.593.177a.762.762,0,0,1,1.069.092.749.749,0,0,1-.092,1.063L1.257,12.555a.749.749,0,0,1-.5.178Z" transform="translate(0 0)" fill="#1d1d89"/>
+          <path id="Tracé_17750" data-name="Tracé 17750" d="M14.087,12.734a.749.749,0,0,1-.491-.178L.271,1.332A.749.749,0,0,1,.179.269.762.762,0,0,1,1.248.177L14.572,11.4a.756.756,0,0,1-.485,1.333Z" transform="translate(13.322 0)" fill="#1d1d89"/>
+        </g>
+      </g>
+      <path id="Tracé_18999" data-name="Tracé 18999" d="M0,0H36.884V1.011H0Z" transform="translate(877.006 7311.283)" fill="#50c49d"/>
+      <path id="Tracé_25763" data-name="Tracé 25763" d="M0,9.038H21.9L11.055,0Z" transform="translate(879.956 7290.653)" fill="#50c49d"/>
+    </g>
+  </g>
+</svg>

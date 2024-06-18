@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/tail.css" >
+    <link rel="stylesheet" href="../css/style.css" >
+	<style>
+	.subdropdown {
+		display: block;
+	}
+	#back {
+		font-size: 14px;
+		font-family: gilroybold,Arial,sans-serif;
+		font-stretch: normal;
+		font-style: normal;
+		font-weight: 600;
+		letter-spacing: .14px;
+		text-align: left;
+		color: #003250;
+		margin-left: 8px;
+	}
+	
+	.sim {
+		display: flex;
+		justify-content: space-between;
+		color: #003250;
+		background: #74f0a7;
+		padding: 12px 16px;
+		cursor: pointer;
+		font-size: 14px;
+		font-weight: bold;
+		letter-spacing: .14px;
+		border-radius: 8px;
+		transition: background .5s;
+		font-family: gilroybold,Arial,sans-serif;
+		text-decoration: none;
+	}
+	
+	.sim:hover {
+		background: #58d98d;
+	}
+	
+	.h {
+		font-size: 14px;
+		font-family: gilroybold,Arial,sans-serif;
+		letter-spacing: .14px;
+		text-align: left;
+		color: #003250;
+		margin-bottom: 16px;
+		font-weight: 500;
+	}
+	
+	.h:hover
+	{
+		cursor: pointer;
+		color: #00a8a5;
+	}
+	
+	.a {
+		font-size: 16px;
+		font-family: gilroybold,Arial,sans-serif;
+		letter-spacing: normal;
+		text-align: left;
+		color: #003250;
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+		cursor:pointer;
+	}
+	</style>
+  </head>
+<body class="">
+<div ng-show="subdrop" class="absolute top-20 z-30 transition-transform duration-200 ease-in-out subdropdown">
+	<span ng-click="subdrop=!subdrop" id="back" class="cursor-pointer">◄ Retour</span>
+	<p class="h mx-5">
+		LES COMBLES
+	</p>	
+	<a class="a mx-5 mb-5">
+		<img src="img/isolation-combles-2.svg" width="32px" height="32px;"/>
+		Combles perdus
+	</a>	
+	<a class="a mx-5 mb-5">
+		<img src="img/isolation-combles-2.svg" width="32px" height="32px;"/>
+		Combles aménageable
+	</a>	
+	<a class="a mx-5 mb-5">
+		<img src="img/isolation-combles-2.svg" width="32px" height="32px;"/>
+		Toiture terrasse
+	</a>
+	<div class="mb-5">
+		<a class="sim mx-5">
+			<span>Je simule mon projet</span>
+			<span>►</span>
+		</a>
+	</div>
+	<p class="h mx-5">
+		LES MURS
+	</p>	
+	<a class="a mx-5 mb-5">
+		<img src="img/isolation-combles-2.svg" width="32px" height="32px;"/>
+		Isolation extérieur
+	</a>	
+	<a class="a mx-5 mb-5">
+		<img src="img/isolation-combles-2.svg" width="32px" height="32px;"/>
+		Isolation intérieur
+	</a>
+	<p class="h mx-5">
+		AUTRES TRAVAUX
+	</p>	
+	<a class="a mx-5 mb-5">
+		<img src="img/isolation-combles-2.svg" width="32px" height="32px;"/>
+		Isolation du sol
+	</a>	
+	<a class="a mx-5 mb-5">
+		<img src="img/isolation-combles-2.svg" width="32px" height="32px;"/>
+		Isolation des fenêtres
+	</a>	
+	<a class="a mx-5 mb-5">
+		<img src="img/isolation-combles-2.svg" width="32px" height="32px;"/>
+		Toiture terrasse
+	</a>
+</div>
+</body>
+</html>

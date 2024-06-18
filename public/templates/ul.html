@@ -1,0 +1,43 @@
+<div class="hidden xl:flex xl:flex-1">
+  <ul class="flex text-base font-bold text-black/60 dark:text-white overflow-visible ul">
+	  <li ng-repeat="item in items" ng-mouseover="show=true" ng-mouseleave="show=false"
+		  class="p-4">
+		  <a href="#">{{ item }}</a>
+		  <div ng-class="{'ng-hide': !show}" class="up">
+		  </div>
+		  <!-- progress bar -->
+		  <div ng-class="{'ng-hide': !show}" class="all2 rounded-xl absolute"></div>
+		  <!-- dropdown menu -->
+		  <div ng-class="{'ng-hide': !show}" class="all absolute flex justify-around bg-white rounded-xl p-4">
+			<div class="p-5">
+				<h2 class="font-bold text-lg mb-8">Les Combles</h2>
+				<ul class="flex flex-col ul2">
+					<li>Combles perdus</li>
+					<li>Combles aménageables</li>
+					<li>Toiture terrasse</li>
+				</ul>
+				<a id="simulate">Je simule mon projet</a>
+			</div>
+			<div class="vertical-hr"></div>
+			<div class="p-5">
+				<h2 class="font-bold text-lg mb-8">Les Murs</h2>
+				<ul class="flex flex-col ul2">
+					<li>Isolation extérieure</li>
+					<li>Isolation inérieure</li>
+				</ul>
+			</div>
+			<div class="vertical-hr"></div>
+			 <div class="p-5">
+				<h2 class="font-bold text-lg mb-8">Autres travaux</h2>
+				<ul class="flex flex-col ul2">
+					<li>Isolation du sol</li>
+					<li>Isolation des fenêtres</li>
+					<li>VMC double flux</li>
+				</ul>
+			</div>
+		 </div>
+
+	  </li>
+  </ul>
+</div>
+              
