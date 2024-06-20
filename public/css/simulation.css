@@ -1,0 +1,31 @@
+.rightside p {
+	color: #003250;
+	font-family: gilroybold,Arial,sans-serif;
+	font-weight: 500;
+	font-size: 40px;
+	letter-spacing: 1px;
+	line-height: 1;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.aside p {
+	color: #003250;
+	font-family: gilroybold,Arial,sans-serif;
+	font-weight: 500;
+	font-size: 20px;
+	letter-spacing: 1px;
+	line-height: 1;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+/* Appartement maison */
+.inside-grid {
+	background-color:white;
+	height: 200px;
+}
+
+.inside-grid:hover {
+	border: 2px solid black;
+}

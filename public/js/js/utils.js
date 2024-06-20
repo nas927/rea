@@ -9,8 +9,11 @@ function get_element(element)
 function changeOpacityId(string, value, translate)
 {
 	var elem = document.getElementById(string)
-	elem.style.opacity = value;
-	elem.style.transform = `translateX(${translate})`;
+	if (elem)
+	{
+		elem.style.opacity = value;
+		elem.style.transform = `translateX(${translate})`;
+	}
 }
 
 function updateProgressBar() {
@@ -109,17 +112,19 @@ app.controller("bodyBody", function ($scope, $timeout){
 			$scope.drop = false;
 		$scope.subdrop = false;
 	};
-	$scope.showSubDrop = function (integer)
+	$scope.templateUrl = '';
+	$scope.showSubDrop = function (integer, url)
 	{
 		if (integer == 1)
 			$scope.subdrop = true;
 		else
 			$scope.subdrop = false;
+		$scope.templateUrl = url;
 	}
 	$scope.showPage = false;
 	$timeout(function (){
 		$scope.showPage = true;
-	}, 3000);
+	}, 0);
 	$scope.items = items;
 	$scope.header_click = function (e){
 		var htmlElement = get_element(e);

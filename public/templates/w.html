@@ -7,8 +7,8 @@
   src="'templates/dropdown.html'">
   </ng-include>
   <!-- SUBDROPDOWN SECTION -->
-  <ng-include
-  src="'templates/subdropdown.html'">
+  <ng-include ng-if="templateUrl"
+  src="'templates/subdrop/'+templateUrl+'.html'">
   </ng-include>
   <!-- HERO SECTION -->
   <ng-include
