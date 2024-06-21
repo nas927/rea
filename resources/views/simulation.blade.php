@@ -4,10 +4,13 @@
 @include('template.features')
 <!-- MAIN SECTION -->
 <div ng-controller="simulation_include">
-	<ng-include src="'/templates/simulation-page/'+page+''">
+<form method="POST">
+	@csrf
+	@method('POST')
+	<ng-include src="'/page/'+increment+''">
 	</ng-include>
+</form>
 </div>
-
 <!-- FOOTER SECTION  -->
 <ng-include
 src="'/templates/footer.html'">

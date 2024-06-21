@@ -44,12 +44,12 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 /* Scroll bar status */
-#scroll0 {
+.scroll0 {
 	background: transparent;
 	height: 4px;
 }
 
-#scroll {
+.scroll {
 	position: relative;
 	height: 4px;
 	z-index: 14;

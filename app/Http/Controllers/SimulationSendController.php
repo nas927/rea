@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class SimulationSendController extends Controller
 {
-    public function index()
+    public function index(Request $req)
     {
-        return view('simulation');
+        dd($req->hey);
     }
 }
