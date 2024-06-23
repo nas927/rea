@@ -1,10 +1,11 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+namespace App\Http\Requests;
 
-return new class extends Migration
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
+
+class SimulationRequest extends FormRequest
 {
     private $tab = [
     	"house_type" => ["maison" , "appartement"],
@@ -32,34 +33,54 @@ return new class extends Migration
         "tel" => "",
         "email" => ""
     ];
-    public function up(): void
+    /**
+     * Determine if the user is authorized to make this request.
+     */
+    public function authorize(): bool
     {
-         Schema::create('simulation', function (Blueprint $table) {
-            $table->increments('id');
-            foreach ($this->tab as $key => $value)
-            {
-                if ($value == "")
-                    $table->string($key);
-                else if ($key == "email")
-                    $table->email($key);
-                else if ($key == "travaux")
-                {
-                    foreach($value as $v => $array)
-                    {
-                        $table->enum($v, $array);
-                    }
-                }
-                else
-                    $table->enum($key, $value);
-            }
-        });
+        return true;
     }
 
     /**
-     * Reverse the migrations.
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function down(): void
+    public function rules(): array
     {
-        //
+        $arr = [];
+        foreach ($this->tab as $key => $value)
+        {
+            if ($value == "" && $value != "surface" && $value != "surface-mur")
+                $arr[$key] = "required|max:255";
+            else if ($key == "email")
+                $arr[$key] = "email:rfc,dns";
+            else if ($key == "surface" || $key == "surface-mur")
+                $arr[$key] = "required|num";
+            else if ($key == "travaux")
+            {
+                foreach($value as $v => $array)
+                {
+                    $arr[$v] = [
+                        "required",
+                        Rule::in($array)
+                    ];
+                }
+            }
+            else
+                $arr[$key] = [
+                        "required",
+                        Rule::in($value)
+                    ];
+        }
+        return $arr;
     }
-};
+    
+    
+    public function messages()
+    {
+        return [
+            
+        ];
+    }
+}

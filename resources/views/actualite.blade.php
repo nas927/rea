@@ -1,7 +1,8 @@
 @include('template.head')
 <link rel="stylesheet" href="{{ asset('css/actu.css') }}" >
 <body ng-app="actu" ng-controller="bodyBody">
-@include('template.features')
+@extends('template.features')
+@section('main')
     <!-- MAIN SECTION -->
     <div ng-show="!showpage" class="p-10 md:px-20 mt-20 lg:mt-40 text-center ng-hide">
         <h1 class="hyphens-auto">Toutes les nouveautés</h1>
@@ -25,10 +26,7 @@
         </div>
         @endfor
     </div>
-<!-- FOOTER SECTION  -->
-<ng-include
-src="'/templates/footer.html'">
-</ng-include>
+@endsection
 @include('template.scripts')
 <script src="{{asset('js/actu.js')}}"></script>
 </body>

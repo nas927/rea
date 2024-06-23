@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\SimulationRequest;
 
 class SimulationSendController extends Controller
 {
-    public function index(Request $req)
+    public function index(SimulationRequest $request)
     {
-        dd($req->hey);
+        $tab = $request->validated();
+        dd($tab);
     }
 }

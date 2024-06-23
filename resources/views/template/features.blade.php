@@ -13,10 +13,19 @@ src="'/templates/header.html'">
 src="'/templates/dropdown.html'">
 </ng-include>
 <!-- SUBDROPDOWN SECTION -->
-<ng-include ng-if="templateUrl"
+<ng-include ng-if="templateUrl" class="fadein absolute z-30"
 src="'/templates/subdrop/'+templateUrl+'.html'">
 </ng-include>
 <!-- GO UP -->
 <ng-include
 src="'/templates/goup.html'">
+</ng-include>
+
+@section('main')
+
+@show
+
+<!-- FOOTER SECTION  -->
+<ng-include
+src="'/templates/footer.html'">
 </ng-include>

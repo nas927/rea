@@ -45,13 +45,12 @@
     <meta name="DC.description" content="Description de la page">
     <meta name="DC.publisher" content="Nom de l'éditeur">
     <meta name="DC.date" content="2024-06-13">
-
-	<title>REA</title>
 	<!-- Fonts -->
 
 	<!-- Styles -->
 	<link href="{{asset('css/tail.css')}}" rel="stylesheet">
 	<link rel="stylesheet" href="{{asset('css/style.css')}}" >
+	<link rel="stylesheet" href="{{asset('css/toast.css')}}" >
 	<!-- A envlever -->
 	<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
 	

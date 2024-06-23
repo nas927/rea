@@ -1,3 +1,8 @@
+/* bar states */
+.bar-state {
+	margin-top: 77px;
+}
+
 .rightside p {
 	color: #003250;
 	font-family: gilroybold,Arial,sans-serif;
@@ -20,6 +25,15 @@
 	text-align: center;
 }
 
+
+input[type="radio"] {
+	height: 30px;
+	width: 30px;
+}
+
+input[type="number"]::placeholder {
+	font-size: 20px;
+}
 /* Appartement maison */
 .inside-grid {
 	background-color:white;
@@ -34,4 +48,38 @@
 
 .inside-grid:hover {
 	border: 2px solid black;
+}
+
+@media screen and (max-width: 700px){
+	input[type="radio"] {
+		position: static;
+	}
+	.inside-grid {
+		flex-direction: row;
+		height: 50px;
+		justify-content: space-around;
+	}
+}
+
+@media screen and (min-width: 700px) and (max-width: 1280px)
+{
+	.more-than-2 {
+		flex-direction: row;
+		height: 50px;
+		justify-content: space-around;
+	}
+}
+
+@media screen and (max-width: 1024px)
+{
+	.bar-state {
+		margin-top: 45px;
+	}
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px)
+{
+	.bar-state {
+		margin-top: 53px;
+	}
 }

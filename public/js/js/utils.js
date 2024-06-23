@@ -16,6 +16,16 @@ function changeOpacityId(string, value, translate)
 	}
 }
 
+function launch_toast(message, color)
+{
+	Toastify({
+	  text: message,
+	  style: {
+		background: color,
+	}
+	}).showToast(); 
+}
+
 function updateProgressBar() {
 		var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 		var scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;

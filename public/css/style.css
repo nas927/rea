@@ -34,7 +34,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* show fade */
 .fade.ng-hide {
-  transition:2s linear opacity;
+  transition:1s linear opacity;
   opacity:0;
 }
 
@@ -42,6 +42,27 @@ body::-webkit-scrollbar-thumb:hover {
 	transition:2s linear opacity;
 	opacity: 1;
 }
+
+.fadein.ng-enter, .fadein.ng-leave {
+	transition:opacity 1s linear;
+}
+
+.fadein.ng-enter {
+  opacity: 0;
+}
+
+.fadein.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+ /* Styles pour l'animation de sortie */
+.fadein.ng-leave {
+  opacity: 1;
+}
+
+.fadein.ng-leave.ng-leave-active {
+  opacity: 0;
+} 
 
 /* Scroll bar status */
 .scroll0 {
@@ -60,7 +81,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* Dropdown menu ul */
 #dropdown {
-	top: 83px;
+	top: 42px;
 }
 .all {
 	top: 56px;
@@ -97,8 +118,8 @@ h2 {
 	font-size: 14px;
 	margin-right: 5px;
 	margin-left: 5px;
-  font-family: gilroybold,Arial,sans-serif;
-  letter-spacing: .14px;
+	font-family: gilroybold,Arial,sans-serif;
+	letter-spacing: .14px;
 }
 
 h2:hover {
@@ -108,7 +129,7 @@ h2:hover {
 
 /* subdropdown */
 .subdropdown {
-	top: 90px;
+	top: 42px;
 }
 #back {
 	font-size: 14px;
@@ -214,8 +235,8 @@ h2:hover {
 
 #simulate:hover {
 	transition: background .5s;
-  background: #58d98d;
-  cursor: pointer;
+	background: #58d98d;
+	cursor: pointer;
 }
 
 .vertical-hr {
@@ -233,40 +254,40 @@ ul li {
 }
 
 .up {
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid #95edad;
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #95edad;
 }
 
 .btn {
-  cursor: pointer;
-  display: inline-flex;
-  letter-spacing: .35px;
-  outline: none;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: all .4s;
-  font-size: 1.4rem;
-  justify-content: center;
-  align-items: center;
-  min-width: 200px;
-  height: 60px;
-  padding: 0 35px;
-  text-align: center;
-  background: linear-gradient(86deg, #00a8a5 23%, #4dd8a6 75%, #74f0a7 110%);
-  border: 0;
-  color: #fff;
-  border-radius: 32px;
-  box-shadow: 0 3px 6px #00000029;
-  transition: background-color 3s;
-  font-family: gilroybold,Arial,sans-serif;
+	cursor: pointer;
+	display: inline-flex;
+	letter-spacing: .35px;
+	outline: none;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: all .4s;
+	font-size: 1.4rem;
+	justify-content: center;
+	align-items: center;
+	min-width: 200px;
+	height: 60px;
+	padding: 0 35px;
+	text-align: center;
+	background: linear-gradient(86deg, #00a8a5 23%, #4dd8a6 75%, #74f0a7 110%);
+	border: 0;
+	color: #fff;
+	border-radius: 32px;
+	box-shadow: 0 3px 6px #00000029;
+	transition: background-color 3s;
+	font-family: gilroybold,Arial,sans-serif;
 }
 
 .btn:hover {
@@ -415,9 +436,6 @@ ul li {
 {
 	#dropdown {
 		top: 42px;
-	}
-	.subdropdown {
-		top: 50px;
 	}
 }
 
