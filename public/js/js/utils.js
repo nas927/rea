@@ -45,7 +45,7 @@ function updateProgressBar() {
 		var reveal = document.querySelectorAll('.reveal');
 		
 		updateProgressBar();
-		if (window.scrollY > 300)
+		if (window.scrollY > 400)
 		{
 			changeOpacityId("but", 1, 0);
 			changeOpacityId("background", 0, 0);
@@ -93,7 +93,14 @@ function updateProgressBar() {
 	});
 })()
 
-app.controller("bodyBody", function ($scope, $timeout){
+app.controller("bodyBody", function ($scope, $timeout, $cookies){
+	// set cookies preferences
+	$scope.setCookiesOn = function (value){
+		if (value)
+			$cookies.put('cookies', 1)
+		else
+			$cookies.put('cookies', 0)
+	}
 	// Preload
  	$scope.c = 45;
 	
@@ -134,7 +141,7 @@ app.controller("bodyBody", function ($scope, $timeout){
 	$scope.showPage = false;
 	$timeout(function (){
 		$scope.showPage = true;
-	}, 0);
+	}, 1000);
 	$scope.items = items;
 	$scope.header_click = function (e){
 		var htmlElement = get_element(e);

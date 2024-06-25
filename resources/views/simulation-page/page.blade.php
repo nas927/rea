@@ -1,4 +1,4 @@
-<div ng-show="!showpage" class="ng-hide">
+<div ng-show="!showsim" class="ng-hide">
 	<div class="abolute z-20 flex-none w-full bar-state">
 	  <div class="scroll" id="scroll1" style="width: @yield('width')%!important"></div>
 	</div>
@@ -9,7 +9,8 @@
 		</div>
 		<!-- SIMULATION SECTION -->
 		<div class="rightside h-full w-full bg-indigo-100 overflow-y-scroll">
-			<div class="h-full grid grid-cols-1 items-content-center gap-4">
+			<button ng-click="prev()" ng-if="increment > 0" class="flex-none block font-bold text-md float-left h-5">◄ Retour</button>
+			<div class="h-full w-full grid grid-cols-1 items-content-center gap-4">
 				<div class="flex flex-col justify-end items-center">
 					<p class="">@yield('title')</p>
 				</div>

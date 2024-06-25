@@ -1,7 +1,7 @@
 @extends('simulation-page.page')
 
-@section('width', '31')
-@section('title', 'Quel est le système utilisé ?')
+@section('width', '71')
+@section('title', 'Quel est votre nif ?')
 
 @section('main')
 <div class="h-full flex justify-center">

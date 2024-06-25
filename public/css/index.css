@@ -1,4 +1,4 @@
- .slider {
+.slider {
 	 box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
 	 height: 100px;
 	 margin: auto;
@@ -35,7 +35,6 @@
 .first-grid {
 	background: white;
 	height: 150px;
-	width: 200px;
 }
 
  .first-grid:hover {
@@ -147,5 +146,50 @@
 	}
 	.text_2, .text_1 {
 		font-size: 10px !important;
+	}
+}
+
+/* Hero section */
+@media screen and (min-width: 1040px)
+{
+	.hero {
+		height: 200px;
+	}
+}
+
+@media screen and (max-width: 1040px)
+{
+	.hero {
+		bottom: -47px !important;
+	}
+}
+
+@media screen and (min-width: 750px) and (max-width: 1040px)
+{
+	.hero {
+		width: 100% !important;
+		z-index: 10;
+		height: 400px;
+	}
+	.last-hero {
+		width: 100% !important;
+		grid-column: span 4;
+	}
+}
+
+@media screen and (max-width: 750px)
+{
+	.hero {
+		height: 500px;
+		width: 100%;
+	}
+	.first-grid-container {
+		width: 100%;
+		margin-right:5px;
+		margin-left:5px;
+		grid-template-columns: repeat(2,minmax(0,1fr));
+	}
+	.last-hero {
+		grid-column: span 2;
 	}
 }

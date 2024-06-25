@@ -12,7 +12,7 @@ return new class extends Migration
         "surface" => "",
         "chauffage" => ["Chauffage au fioul" , "Chauffage électrique" , "Chauffage au gaz" , "Chauffage au bois" , "Pombe à chaleur" , "Chauffage au charbon"],
         "systeme" => ["Chaudière à condensation" , "Chaudière classique" , "Poêle" , "Je ne sais pas"],
-        "etiquette" => ["Etiquette A-F" , "je ne sais pas"],
+        "etiquette" => ["Etiquette A","Etiquette B","Etiquette C","Etiquette D","Etiquette E","Etiquette F", "je ne sais pas"],
         "travaux" => [
             "Rénovation globale" => ["Combo Isolation/Chauffage/Ventilation"],
             "Isolation" => ["Isolation des combles", "Isolation des murs", "Isolation du sol", "Fenêres/Porte-fenêtres", "Isolation d\'une toiture terrasse", "VMC double flux"],
@@ -44,10 +44,7 @@ return new class extends Migration
                     $table->email($key);
                 else if ($key == "travaux")
                 {
-                    foreach($value as $v => $array)
-                    {
-                        $table->enum($v, $array);
-                    }
+                     $table->enum($key, $value);
                 }
                 else
                     $table->enum($key, $value);

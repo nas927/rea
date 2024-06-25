@@ -15,6 +15,6 @@ class SubDropController extends Controller
         if ($subdrop->isEmpty() != true)
             return view('subdrop', ["all" => $subdrop[0]]);
         else
-            return redirect()->route('index');
+            return redirect()->route('index')->with('error', ['Vous ne pouvez pas accéder à cette page pour le moment !']);
     }
 }

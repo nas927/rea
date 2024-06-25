@@ -1,4 +1,4 @@
-<div class="main-left w-1/4">
+<div class="main-left lg:w-1/4">
 	<h1 class="">{{ $all->title }}</h1>
 	@include('template.about_skeleton.summary')
 	<p class="text-center">{{ $all->content}}</p>

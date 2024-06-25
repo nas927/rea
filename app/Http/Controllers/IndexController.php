@@ -9,11 +9,6 @@ class IndexController extends Controller
 {
     public function index(): View
     {
-        $header = ['Isolation', 'Chauffage', 'Solaire', 'Rénovation 
-        globale', 'Aides 
-        et Primes', 'Actualités'];
-        return view('welcome', 
-        ['header' => $header]
-        );
+        return view('welcome');
     }
 }

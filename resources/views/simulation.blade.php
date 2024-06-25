@@ -1,4 +1,4 @@
-@include('template.head')
+@extends('template.head')
 <link rel="stylesheet" href="{{ asset('css/simulation.css') }}" />
 <body ng-app="simulation" ng-controller="bodyBody">
 @extends('template.features')
@@ -12,6 +12,5 @@
 		</form>
 	</div>
 @endsection
-@include('template.scripts')
-<script src="{{ asset('js/simulation.js')}}"></script>
+@section('js', 'simulation')
 </body>

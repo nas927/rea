@@ -59,6 +59,9 @@ input[type="number"]::placeholder {
 		height: 50px;
 		justify-content: space-around;
 	}
+	.change-width {
+		width: 80%;
+	}
 }
 
 @media screen and (min-width: 700px) and (max-width: 1280px)

@@ -1,4 +1,4 @@
-@include('template.head')
+@extends('template.head')
 <link rel="stylesheet" href="{{ asset('css/actu.css') }}" >
 <body ng-app="actu" ng-controller="bodyBody">
 @extends('template.features')
@@ -7,7 +7,7 @@
     <div ng-show="!showpage" class="p-10 md:px-20 mt-20 lg:mt-40 text-center ng-hide">
         <h1 class="hyphens-auto">Toutes les nouveautés</h1>
         <p class="w-full truncate">bllllllllllllllaaaaaaaaaaaablaaaaaaaaaaaaaaaaaaaaaaa</p>
-    <div>
+    </div>
     <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-4 lg:p-10 mt-20 reveal">
         @for ($i = 1; $i <= 15; $i++)
         <div class="bg-white rounded-xl shadow-md overflow-hidden shadow-lg">
@@ -27,6 +27,5 @@
         @endfor
     </div>
 @endsection
-@include('template.scripts')
-<script src="{{asset('js/actu.js')}}"></script>
+@section('js', 'actu')
 </body>

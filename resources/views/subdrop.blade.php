@@ -1,4 +1,4 @@
-@include('template.head')
+@extends('template.head')
 <link rel="stylesheet" href="{{ asset('css/subdrop.css') }}">
 <body ng-app="subdrop" ng-controller="bodyBody">
 @extends('template.features')
@@ -10,6 +10,5 @@
 		@include('template.about_skeleton.right')
 	</div>
 @endsection
-@include('template.scripts')
-<script src="{{ asset('js/subdrop.js') }}" async></script>
+@section('js', 'subdrop')
 </body>
