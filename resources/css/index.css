@@ -1,3 +1,27 @@
+/* tabs section */
+
+.tabs div {
+	position: relative;
+	cursor: pointer;
+}
+.tabs div:hover:after, .selected:focus-within:after {
+	content: "";
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	bottom: -15px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid var(--color);
+}
+
+.selected:focus-within {
+	background: var(--color);
+}
+
 .slider {
 	 box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
 	 height: 100px;
@@ -116,7 +140,7 @@
   height:100%;
   width:100%;
   opacity: 0.9; 
-  background:url('../img/house.jpg') no-repeat;
+  background:url('/img/house.jpg') no-repeat;
   background-position:0;
   -webkit-transition: 2s ease;
   -moz-transition: 2s ease;

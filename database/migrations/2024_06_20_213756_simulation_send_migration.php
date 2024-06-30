@@ -41,7 +41,7 @@ return new class extends Migration
                 if ($value == "")
                     $table->string($key);
                 else if ($key == "email")
-                    $table->email($key);
+                    $table->string($key)->unique();
                 else if ($key == "travaux")
                 {
                      $table->enum($key, $value);
@@ -57,6 +57,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::drop('simulation');
     }
 };

@@ -1,0 +1,18 @@
+h1, h2 {
+	color: #003250;
+	font-family: gilroyblack,Arial,sans-serif;
+	letter-spacing: .99px;
+	font-weight: bold;
+}
+
+p, ol li {
+	font-size: 1rem;
+	color: #003250;
+	font-family: gilroyregular,Arial,sans-serif;
+	letter-spacing: .18px;
+	line-height: 1.33;
+}
+
+ol li {
+	list-style: inside;
+}

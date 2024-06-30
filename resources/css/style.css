@@ -6,7 +6,7 @@
 /* add giroy font */
 @font-face {
 	font-family: "gilroybold";
-	src: url('../fonts/Gilroy-Bold.ttf') format('truetype');
+	src: url('/fonts/Gilroy-Bold.ttf') format('truetype');
 }
 
 /* Styles pour les navigateurs WebKit */
@@ -342,11 +342,11 @@ ul li {
 }
 
 .background {
-  background-image: url(../img/fish.jpg);
+  background-image: url(/img/fish.jpg);
 }
 
 .foreground {
-  background-image: url(../img/bird.jpg);
+  background-image: url(/img/bird.jpg);
   mask-image: linear-gradient(var(--direction), rgba(0,0,0,1) 40%, rgba(0,0,0,0) 60%);
   mask-position: 50% 50%;
 }

@@ -11,7 +11,7 @@
 			<span>Une maison</span>
 		</label>
 		<label class="inside-grid flex flex-col justify-center items-center rounded-xl cursor-pointer shadow-xl">
-			<input type="radio" id="appartement" ng-model="confirm" value="@{{ tab[tab_index[increment]][1] }}" name="@{{ tab_index[increment] }}" ng-change="update('@{{ tab_index[increment] }}', confirm)"/>
+			<input type="radio" id="appartement" ng-model="confirm" value="@{{ tab[tab_index[increment]][1] }}" name="@{{ tab_index[increment] }}" ng-checked="check('@{{tab_index[increment]}}', '@{{tab[tab_index[increment]][1]}}')" ng-change="update('@{{ tab_index[increment] }}', confirm)"/>
 			<span>Un appartement</span>
 		</label>
 	</div>

@@ -26,12 +26,13 @@
               >
                 <input
                   type="email"
+                  ng-model="email"
                   id="UserEmail"
                   placeholder="john@rhcp.com"
                   class="w-full border-none focus:border-transparent focus:ring-transparent sm:text-sm outline-none"
                 />
 
-                <button
+                <button ng-click="sendNews(email)"
                   class="btn w-full h-auto hover:shadow-lg hover:drop-shadow"
                 >
                   Envoyer
@@ -45,19 +46,19 @@
 
             <ul class="mt-6 space-y-4 text-sm">
               <li>
-                <a href="#" class="text-gray-700  hover:opacity-75"> Isolation </a>
+                <a href="/isolation" class="text-gray-700  hover:opacity-75"> Isolation </a>
               </li>
 
               <li>
-                <a href="#" class="text-gray-700 hover:opacity-75"> Menuiserie </a>
+                <a href="/menuiserie" class="text-gray-700 hover:opacity-75"> Menuiserie </a>
               </li>
 
               <li>
-                <a href="#" class="text-gray-700 hover:opacity-75"> Chauffage </a>
+                <a href="/chauffage" class="text-gray-700 hover:opacity-75"> Chauffage </a>
               </li>
 
               <li>
-                <a href="#" class="text-gray-700 hover:opacity-75"> Panneau Solaire </a>
+                <a href="/panneau" class="text-gray-700 hover:opacity-75"> Panneau Solaire </a>
               </li>
             </ul>
           </div>
@@ -82,11 +83,11 @@
 
             <ul class="mt-6 space-y-4 text-sm">
               <li>
-                <a href="#" class="text-gray-700 hover:opacity-75"> Contact </a>
+                <a href="/contact-form" class="text-gray-700 hover:opacity-75"> Contact </a>
               </li>
 
               <li>
-                <a href="#" class="text-gray-700 hover:opacity-75"> FAQs </a>
+                <a href="/faq" class="text-gray-700 hover:opacity-75"> FAQs </a>
               </li>
 
               <li>
@@ -100,25 +101,11 @@
 
             <ul class="mt-6 space-y-4 text-sm">
               <li>
-                <a href="#" class="text-gray-700 hover:opacity-75"> CGU </a>
+                <a href="/cgu" class="text-gray-700 hover:opacity-75"> CGU </a>
               </li>
 
               <li>
-                <a href="#" class="text-gray-700 hover:opacity-75"> CGV </a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="col-span-2 sm:col-span-1 xs:place-self-center">
-            <p class="font-medium text-gray-900">Downloads</p>
-
-            <ul class="mt-6 space-y-4 text-sm">
-              <li>
-                <a href="#" class="text-gray-700 hover:opacity-75"> Marketing Calendar </a>
-              </li>
-
-              <li>
-                <a href="#" class="text-gray-700 hover:opacity-75"> SEO Infographics </a>
+                <a href="/cgv" class="text-gray-700 hover:opacity-75"> CGV </a>
               </li>
             </ul>
           </div>
@@ -226,15 +213,15 @@
 
           <ul class="mt-8 flex flex-wrap justify-start gap-4 text-xs sm:mt-0 lg:justify-end">
             <li>
-              <a href="#" class="text-gray-500 hover:opacity-75"> Conditions </a>
+              <a href="/mention" class="text-gray-500 hover:opacity-75"> Mention Légale </a>
             </li>
 
             <li>
-              <a href="#" class="text-gray-500 hover:opacity-75"> Politique </a>
+              <a href="/vie-prive" class="text-gray-500 hover:opacity-75"> Politique </a>
             </li>
 
             <li>
-              <a href="#" class="text-gray-500 hover:opacity-75"> Cookies </a>
+              <a href="/cookies" class="text-gray-500 hover:opacity-75"> Cookies </a>
             </li>
           </ul>
         </div>

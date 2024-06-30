@@ -9,7 +9,7 @@
 	@for($i = 0 ; $i < 5 ; $i++)
 		<span class="text-center font-bold text-md">{{ travaux_index[<?= $i ?>] }}</span>
 		<label ng-repeat="t in travaux[travaux_index[{{$i}}]]" class="inside-grid more-than-2 flex flex-col justify-center items-center rounded-xl cursor-pointer shadow-xl" style="height: 50px;">
-			<input type="radio" ng-model="confirm" ng-change="update('@{{ tab_index[increment] }}', confirm,  '{{ travaux_index[<?= $i ?>] }}')" value="@{{ t }}" name="@{{ tab_index[increment] }}"/>
+			<input type="radio" ng-model="confirm" ng-checked="check('@{{tab_index[increment]}}', '@{{ t | escapeApostrophe }}')" ng-change="update('@{{ tab_index[increment] }}', confirm,  '{{ travaux_index[<?= $i ?>] }}')" value="@{{ t }}" name="@{{ tab_index[increment] }}"/>
 			<span>@{{ t }}</span>
 		</label>
 	@endfor

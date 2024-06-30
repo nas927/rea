@@ -1,0 +1,15 @@
+<div class="w-full flex justify-center" ng-controller="tab">
+    <div class="w-10/12 bg-indigo-100 relative" style="height: 500px;">
+      <div class="flex justify-center absolute -top-10 left-0 right-0 tabs mx-10 gap-5">
+          <div ng-click="changeTab('tab1')" style="--color: blue" tabindex="0" class="bg-white text-center font-bold p-5 rounded-xl selected">Changer mon chauffage</div>
+          <div ng-click="changeTab('tab2')"style="--color: pink" tabindex="0" class="bg-white text-center font-bold p-5 rounded-xl selected">Changer mon chauffage</div>
+          <div ng-click="changeTab('tab3')" style="--color: green" tabindex="0" class="bg-white text-center font-bold p-5 rounded-xl selected">Changer mon chauffage</div>
+      </div>
+      <div ng-show="tab_list.tab1" class="grid grid-cols-1 lg:grid-cols-2 mx-20 content-center h-full gap-4 ng-hide">
+          <div class="bg-white text-center font-bold p-5 rounded-xl">Changer mon chauffage</div>
+          <div class="bg-white text-center font-bold p-5 rounded-xl">Changer mon chauffage</div>
+          <div class="bg-white text-center font-bold p-5 rounded-xl">Changer mon chauffage</div>
+          <div class="bg-white text-center font-bold p-5 rounded-xl">Changer mon chauffage</div>
+      </div>
+    </div>
+</div>

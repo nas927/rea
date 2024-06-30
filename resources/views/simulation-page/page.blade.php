@@ -1,4 +1,4 @@
-<div ng-show="!showsim" class="ng-hide">
+<div ng-show="showsim" class="ng-hide">
 	<div class="abolute z-20 flex-none w-full bar-state">
 	  <div class="scroll" id="scroll1" style="width: @yield('width')%!important"></div>
 	</div>

@@ -52,12 +52,17 @@ class SimulationRequest extends FormRequest
         $arr = [];
         foreach ($this->tab as $key => $value)
         {
-            if ($value == "" && $key != "surface" && $key != "surface-mur")
+            if ($value == "" && $key != "surface" && $key != "surface-mur" && $key != "tel")
                 $arr[$key] = "required|max:255";
             else if ($key == "email")
                 $arr[$key] = "email:rfc,dns|max:255";
             else if ($key == "surface" || $key == "surface-mur")
                 $arr[$key] = "required|numeric";
+            else if ($key == "tel")
+                $arr[$key] = [
+                "required",
+                'regex:/^[+03][673][ .-]?\d{2}[ .-]?\d{2}[ .-]?\d{2}[ .-]?\d{2}/'
+            ];
             else if ($key == "travaux")
             {
                 $arr[$key] = [
@@ -84,10 +89,18 @@ class SimulationRequest extends FormRequest
     }
     
     
-    public function messages()
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array<string, string>
+     */
+    public function messages(): array
     {
         return [
-            
+            '*.max' => "L'email doit faire moins de 255 charactères",
+            '*.required' => 'Tous les champs sont requis',
+            'email.email' => 'Vous devez saisir un email valide',
+            '*.regex' => "Le numéro n'est pas dans un format valide"
         ];
     }
 }

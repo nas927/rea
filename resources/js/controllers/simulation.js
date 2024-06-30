@@ -32,9 +32,17 @@ var tab_index = Object.keys(tab);
 var travaux = tab["travaux"];
 var travaux_index = Object.keys(travaux);
 
+app.filter('escapeApostrophe', function() {
+    return function(input) {
+      if (!input) return input;
+      return input.replace(/'/g, '&#39;');
+    };
+  });
 
-app.controller("simulation_include", function ($scope, $http, $timeout, $cookies){
+app.controller("simulation_include", ['$scope', '$http', '$timeout', '$cookies', function ($scope, $http, $timeout, $cookies){
+	// show the page
 	$scope.increment = 0;
+	$scope.showsim = true;
 	$scope.tab_index = tab_index;
 	$scope.travaux = travaux;
 	$scope.travaux_index = travaux_index;
@@ -42,26 +50,25 @@ app.controller("simulation_include", function ($scope, $http, $timeout, $cookies
 	$scope.data = {};
 	// store to data
 	$scope.update = function (e, confirme, page = 0) {
+		if ($cookies.get(e))
+			$cookies.remove(e);
+		$cookies.put(e, confirme);
 		if (page)
 			$scope.data[e] = [page, confirme];
 		else
 			$scope.data[e] = confirme;
-		if ($cookies.get(e))
-			$cookies.remove(e);
-		$cookies.put(e, confirme);
-			
-	}
+	};
 	// go next page
 	$scope.next = function (){
- 		if ($scope.data[$scope.tab_index[$scope.increment]])
+ 		if ($scope.data[$scope.tab_index[$scope.increment]] || $cookies.get($scope.tab_index[$scope.increment]))
 			$scope.increment++;
 		else
 			launch_toast('Veuillez sélectionner ou remplir un champ !','red');
-		}
+	};
 	// go back
 	$scope.prev = function () {
 		$scope.increment--;
-	}
+	};
 	// send to page 
  	$scope.send = function ()
 	{
@@ -71,7 +78,7 @@ app.controller("simulation_include", function ($scope, $http, $timeout, $cookies
 			{
 				launch_toast('Le formulaire a bien été envoyé !');
 				$timeout(function (){
-					window.location.replace("/");
+					/*window.location.replace("/");*/console.log('okay');
 				}, 1000);
 			}
 			else
@@ -79,19 +86,48 @@ app.controller("simulation_include", function ($scope, $http, $timeout, $cookies
 		}, 
 		function () {
 			console.log("problème");
-			launch_toast("Une erreur est survenu vérifiez vos champs !", 'red');
+			launch_toast("Une erreur est survenu vérifiez vos champs ou vous avez déjà soumis le formulaire !", 'red');
 		});
-	}
+	};
 	// go to up page
 	$scope.to_top = function (){
 		window.scrollTo({
 				top: 0,
 				behavior: 'smooth'
 		});
-		$scope.showsim = false;
-	}
+	};
+	// check cookie
 	$scope.check = function (index, confirme){
-		if($cookies.get(index) == confirme)
+		if($cookies.get(index) == escapeOff(confirme))
 			return 1;
-	}
-});
+	};
+	// check input
+	$scope.value = function (confirme)
+	{
+		return $cookies.get(confirme);
+	};
+	// update address on field address
+	$scope.address = [];
+	$scope.updateAddress = function (confirme){
+		var config = {
+			headers: {
+				'Access-Control-Allow-Origin': 'https://api-adresse.data.gouv.fr/search/*',
+				'Access-Control-Allow-Headers': '*',
+				'Access-Control-Allow-Methods': '*'
+			}
+		};
+		$http.get('https://api-adresse.data.gouv.fr/search/?q='+confirme, {}, config).then(function (data){
+			$scope.address = data.data.features;
+		}, 
+		function () {
+			console.log("problème");
+		});
+	};
+	// update address value 
+	$scope.updateVal = function ($e){
+		document.getElementById("address").value = $e.target.innerText;
+		$scope.data['adress'] = $e.target.innerText;
+		$cookies.put('adress', $e.target.innerText);
+		$scope.address = [];
+	};
+}]);

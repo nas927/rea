@@ -8,12 +8,19 @@ function get_element(element)
 
 function changeOpacityId(string, value, translate)
 {
-	var elem = document.getElementById(string)
+	var elem = document.getElementById(string);
 	if (elem)
 	{
 		elem.style.opacity = value;
 		elem.style.transform = `translateX(${translate})`;
 	}
+}
+
+function escapeOff (input)
+{
+	if (input.match(/&#39;/gi))
+		return input.replace(/&#39;/g, "'");
+	return input;
 }
 
 function launch_toast(message, color)
@@ -91,25 +98,31 @@ function updateProgressBar() {
 			}
 		});
 	});
-})()
+})();
 
-app.controller("bodyBody", function ($scope, $timeout, $cookies){
+app.controller("bodyBody", ['$scope', '$http', '$timeout', '$cookies', function ($scope, $http, $timeout, $cookies) {
 	// set cookies preferences
 	$scope.setCookiesOn = function (value){
 		if (value)
-			$cookies.put('cookies', 1)
+			$cookies.put('cookies', 1);
 		else
-			$cookies.put('cookies', 0)
-	}
+			$cookies.put('cookies', 0);
+	};
+	$scope.cook = function (){
+		if ($cookies.get('cookies'))
+			return 0;
+		else
+			return 1;
+	};
 	// Preload
  	$scope.c = 45;
 	
-	$scope.draw = function ()
+ 	$scope.draw = function ()
 	{
 	  document.documentElement.style.setProperty('--direction', $scope.c++ + 'deg');
 	  if ($scope.c < 200)
 		requestAnimationFrame($scope.draw);
-	}
+	};
 	requestAnimationFrame($scope.draw);
 	
 	$scope.goTop = function ()
@@ -118,7 +131,7 @@ app.controller("bodyBody", function ($scope, $timeout, $cookies){
 				top: 0,
 				behavior: 'smooth'
 		});
-	}
+	};
 
 	$scope.drop = false;
 	$scope.subdrop = false;
@@ -137,11 +150,12 @@ app.controller("bodyBody", function ($scope, $timeout, $cookies){
 		else
 			$scope.subdrop = false;
 		$scope.templateUrl = url;
-	}
-	$scope.showPage = false;
+	};
+	// show page
+	$scope.showpage = false;
 	$timeout(function (){
-		$scope.showPage = true;
-	}, 1000);
+		$scope.showpage = true;
+	}, 3000);
 	$scope.items = items;
 	$scope.header_click = function (e){
 		var htmlElement = get_element(e);
@@ -149,5 +163,19 @@ app.controller("bodyBody", function ($scope, $timeout, $cookies){
 	$scope.header_mouseout = function (e)
 	{
 		var htmlElement = get_element(e);
-	}
-});
+	};
+	// send mail to newsletter
+	$scope.sendNews = function (email){
+		$http.post('/contact', JSON.stringify({'email': email})).then(
+		function (){
+			console.log("succes");
+			launch_toast('Vous avez bien été inscrit à la newsletter !');
+		},
+		function () {
+			console.log("problème");
+			launch_toast("Un problème est survenu réessayez utérieurement !", 'red');
+		});
+		document.getElementById("UserEmail").value = "";
+	};
+	
+}]);

@@ -1,10 +1,11 @@
-@extends('template.head')
-<link rel="stylesheet" href="{{ asset('css/subdrop.css') }}">
-<body ng-app="subdrop" ng-controller="bodyBody">
 @extends('template.features')
+@section('css')
+<link rel="stylesheet" href="{{ minify('css/subdrop.css') }}" >
+@endsection
+@section('app', 'subdrop')
 @section('main')
 	<!-- MAIN SECTION -->
-	<div ng-show="!showpage" class="flex justify-center gap-5 ng-hide" 
+	<div class="flex justify-center gap-5" ng-if="showpage"
 	style="margin-top: 150px;height: 1000px;">
 		@include('template.about_skeleton.left')
 		@include('template.about_skeleton.right')

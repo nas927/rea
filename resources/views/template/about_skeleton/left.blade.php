@@ -3,7 +3,7 @@
 	@include('template.about_skeleton.summary')
 	<p class="text-center">{{ $all->content}}</p>
 	<button class="btn">Je teste ma simulation</button>
-	<div class="w-full relative overflow-hidden">
+	<div class="w-10/12 lg:w-full relative overflow-hidden">
 	<img class="w-full rounded-xl" id="img-sub" src="/img/{{ $all->img }}" />
 	<!--?xml version="1.0" standalone="no"?-->              
 	<svg class="svg-shape absolute" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">                    
@@ -19,5 +19,7 @@
 		</div>
 	</div>
 	<button class="btn">{{ $all->button }}</button>
+	<br>
+	<span class="pre-footer text-left">REA </span>
 </div>
 	

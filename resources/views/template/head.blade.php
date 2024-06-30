@@ -7,6 +7,23 @@
     <meta name="keywords" content="mot-clé1, mot-clé2, mot-clé3">
     <meta name="robots" content="index, follow">
     <meta name="language" content="fr">
+    
+	<!-- Manifest et dns-fetch -->
+    <link rel="manifest" href="{{ route('manifest') }}">
+    <link rel="dns-prefetch" href="//rea-enr.fr">
+    
+    <!-- Icon -->
+	<link rel="shortcut icon" href="">
+	<link rel="apple-touch-icon" href="">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    
+    <!-- Microsoft -->
+    <meta name="msapplication-TileColor" content="#b0d139">
+    <meta name="msapplication-TileImage" content="chemin/pinned-favicon.png">
+    <meta name="application-name" content="Alsacréations">
 
     <!-- Open Graph Meta Tags twitter, insta... -->
     <meta property="og:title" content="REA">
@@ -48,11 +65,25 @@
 	<!-- Fonts -->
 
 	<!-- Styles -->
-	<link href="{{asset('css/tail.css')}}" rel="stylesheet">
-	<link rel="stylesheet" href="{{asset('css/style.css')}}" >
-	<link rel="stylesheet" href="{{asset('css/toast.css')}}" >
+	<link href="{{ minify('css/tail.css') }}" rel="stylesheet">
+	<link rel="stylesheet" href="{{ minify('css/style.css') }}" >
+	<link rel="stylesheet" href="{{ minify('css/toast.css') }}" >
+    @section('css')
+
+    @show
 	<!-- A envlever -->
 	<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
 	
 	<!-- scripts -->
+	@include('template.scripts')
+	<noscript>
+		<meta http-equiv="refresh" content="0;URL=https://support.google.com/adsense/answer/12654?hl=fr"> 
+	</noscript>
+	@stack('script')
+	<script src="{{ minify('js/controllers') }}/@yield('js').js"></script>
 </head>
+
+@section('body')
+
+@show
+</html>
