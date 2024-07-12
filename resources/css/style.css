@@ -408,7 +408,7 @@ ul li {
 @media screen and (max-width: 1280px)
 {
 	#background {
-		margin-top: 0px !important;
+		margin-top: -5rem !important;
 	}
 	/* logo order in the middle */
 	#logo {

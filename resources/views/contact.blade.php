@@ -7,7 +7,7 @@
 <style>
   .login_img_section {
   background: linear-gradient(rgba(2,2,2,.7),rgba(0,0,0,.7)),url(https://images.unsplash.com/photo-1650825556125-060e52d40bd0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80) center center;
-}
+  }
 </style>
 <div class="h-screen flex">
   <div class="hidden lg:flex w-full lg:w-1/2 login_img_section
@@ -23,7 +23,7 @@
           </div>
   </div>
   <div class="flex w-full lg:w-1/2 justify-center items-center bg-white space-y-8">
-    <div class="w-full px-8 md:px-32 lg:px-24">
+    <div class="w-full px-8 lg:px-24">
     <form action="{{ route('sent') }}" method="post" class="bg-white rounded-md shadow-2xl p-5">
       @method('POST')
       @csrf
